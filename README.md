@@ -1,67 +1,70 @@
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+# Getting Started with Create React App
 
-&nbsp;
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
-# Headless CMS
+In the project directory, you can run:
 
-[Headless CMS](https://www.unity.pl/blog/co-warto-wiedziec-o-headless-cms/) to narzędzie, które pozwala tworzyć zawartość strony bez potrzeby budowania dedykowanego panelu administracyjnego. 
+### `npm start`
 
-Przy pomocy odpowiedniego [UI](https://en.wikipedia.org/wiki/User_interface_design) możesz „wyklikać” potrzebne pola, które stworzą strukturę dla zawartości strony.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Treści i zasoby uzupełnia się przez wygodny formularz (możesz to robić Ty, klient czy pracownik), a następnie pobiera przez API. 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Headless CMS-y są bardzo wygodne dla programistów front-end, którzy nie chcą tracić czasu na rozwiązania back-endowe.
+### `npm test`
 
-## Prismic
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Twoim zadaniem będzie wykorzystać headless CMS – [Prismic](https://prismic.io/).
+### `npm run build`
 
-## API
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Utwórz blog, którego zawartość będzie pobierana przez [API Prismica](https://prismic.io/docs/technologies/introduction-to-the-content-query-api).
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Dokumentacja zawiera opis narzędzi przeznaczonych dla danej technologii, np. [JavaScriptu](https://prismic.io/docs/technologies/integrating-with-an-existing-project-javascript), a nawet [Reacta](https://prismic.io/docs/technologies/start-a-prismic-project-from-scratch-with-reactjs).
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Udostępnia również [przydatne narzędzie](https://prismic.io/docs/technologies/the-rest-api-browser) do testowania zapytań pod adresem: `[nazwa-przestrzeni].prismic.io/api`. 
+### `npm run eject`
 
-## Podstawowe założenia
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Blog powinien posiadać wpisy, które zawierają co najmniej:
-- tytuł
-- wstęp
-- zawartość
-- zdjęcie
-- [slug/alias](https://webwavecms.com/blog/slug)
-- kategorie.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-> **Podpowiedź:** Najlepiej będzie, jeśli utworzysz w [panelu](https://prismic.io/dashboard) dwa `Custom Type` określane mianem `Repeatable Type`, tj. `post`oraz `category`, i powiążesz je między sobą przy pomocy `Content relationship`. Możesz też wykorzystać `Group`, jeśli do jednego wpisu będziesz chciał przyporządkować kilka kategorii. 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-### React Router DOM
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Największy nacisk w tym projekcie powinieneś położyć na odpowiednie przygotowanie adresów URL – tak aby były one dobrze napisane pod względem UX.
+## Learn More
 
-Może warto zrobić listę kategorii, które pozwolą użytkownikowi czytać tylko interesujące go materiały.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Może warto również dodać do adresu URL datę publikacji wpisu lub przynajmniej rok i miesiąc – aby móc wyświetlać artykuły z danego przedziału czasowego.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Na przykład `/2020/11/` wyświetli wszystkie artykuły opublikowane w listopadzie 2020 r.
+### Code Splitting
 
-Pamiętaj też o odpowiedniej **paginacji**. Podziel wyświetlanie zawartości na części, gdzie na jednej podstronie widać maksymalnie 6 wpisów.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Przykłady
+### Analyzing the Bundle Size
 
-W dokumentacji Prismica znajdziesz [przykłady implementacji dla Reacta](https://prismic.io/docs/technologies/example-projects-reactjs), np. [prosty blog](https://react-blog-demo.netlify.app/) czy [blog z kilkoma podstronami](https://react-website-demo.netlify.app/).
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Proponuję zapoznać się z nimi, zanim przejdziesz do własnej implementacji. 
+### Making a Progressive Web App
 
-W przykładach znajdziesz również wykorzystanie przydatnego narzędzia [React Helmet](https://www.npmjs.com/package/react-helmet), które pozwala w wygodny sposób zarządzać elementami zapisanym w `<head>`, np. `<title>`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
+### Advanced Configuration
 
-&nbsp;
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
