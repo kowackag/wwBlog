@@ -1,17 +1,18 @@
 import React from 'react';
 import {HashRouter as Router, Nav, Switch, Route} from 'react-router-dom';
-import { useSinglePrismicDocument } from '@prismicio/react';
-
-
+import Header from './Header'
+import Home from '../views/Home';
+import Events from '../views/Events'
 function App() {
-  const [post] = useSinglePrismicDocument('post');
-  console.log(post);  
+  
   return (
     <Router>
-      {/* <Header> */}
-
-
-      {/* </Header> */}
+      <Header/>
+      <Switch>
+        <Route exact path={'/'}><Home/></Route>
+        <Route exact path={'/wydarzenia'}><ul><Events/></ul></Route>
+        <Route exact path={'/filmografia'} component={Home}></Route>
+      </Switch>
     </Router>
   );
 }

@@ -5,7 +5,7 @@ import App from './components/App';
 // import reportWebVitals from './reportWebVitals';
 import {PrismicProvider} from '@prismicio/react';
 import {client} from './prismic';
-
+console.log(client)
 ReactDOM.render(
   <React.StrictMode>
     <PrismicProvider client={client}>

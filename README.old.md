@@ -9,7 +9,7 @@
 
 [Headless CMS](https://www.unity.pl/blog/co-warto-wiedziec-o-headless-cms/) to narzędzie, które pozwala tworzyć zawartość strony bez potrzeby budowania dedykowanego panelu administracyjnego. 
 
-Przy pomocy odpowiedniego [UI](https://en.wikipedia.org/wiki/User_interface_design) możesz „wyklikać” potrzebne pola, które stworzą strukturę dla zawartości strony.
+Przy pomocy odpowiedniego [UI](https://en.wikipedia.org/wikiUser_interface_design) możesz „wyklikać” potrzebne pola, które stworzą strukturę dla zawartości strony.
 
 Treści i zasoby uzupełnia się przez wygodny formularz (możesz to robić Ty, klient czy pracownik), a następnie pobiera przez API. 
 

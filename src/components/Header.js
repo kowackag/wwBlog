@@ -1,17 +1,25 @@
 import React from 'react';
-import {Nav} from 'react-router-dom';
-
+import {NavLink} from 'react-router-dom';
 const Header = () => {
+    const navFields = [
+        { title: 'O mnie', path: '/'},
+        { title: 'Wydarzenia', path: '/wydarzenia'},
+        { title: 'Filmografia', path: '/filmografia'},
+        { title: 'Zdjęcia', path: '/zdjecia'},
+        { title: 'Kontakt', path: '/kontakt'},
+    ]
 
     return(
-        <header>
-            <h1 className="title">Wojciech Walkiewicz</h1>
-            <p className="subtitle">Operator, scenarzysta, reżyser</p>
+        <header className="header">
+            <h1 className="header__title">Wojciech Walkiewicz</h1>
+            <p className="header__subtitle">Operator, scenarzysta, reżyser</p>
             <nav>
-                <Nav
+                <ul className="header__navigation">
+                    {navFields.map(item=><li key={item.title}><NavLink to={item.path}>{item.title}</NavLink></li>)}
+                </ul>
             </nav>
         </header>
     )
 }
 
-export default Header
+export default Header;
