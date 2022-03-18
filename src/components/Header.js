@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import StyledHeader from '../styled/Header.styled';
 const Header = () => {
     const navFields = [
         { title: 'O mnie', path: '/'},
@@ -10,7 +11,7 @@ const Header = () => {
     ]
 
     return(
-        <header className="header">
+        <StyledHeader>
             <h1 className="header__title">Wojciech Walkiewicz</h1>
             <p className="header__subtitle">Operator, scenarzysta, reżyser</p>
             <nav>
@@ -18,7 +19,7 @@ const Header = () => {
                     {navFields.map(item=><li key={item.title}><NavLink to={item.path}>{item.title}</NavLink></li>)}
                 </ul>
             </nav>
-        </header>
+        </StyledHeader>
     )
 }
 

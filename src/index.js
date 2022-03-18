@@ -2,15 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
+import {ThemeProvider} from 'styled-components';
+import theme from './styled/theme'
 // import reportWebVitals from './reportWebVitals';
 import {PrismicProvider} from '@prismicio/react';
 import {client} from './prismic';
+import Reset from './styled/Reset';
+import Global from './styled/Global'
 console.log(client)
 ReactDOM.render(
   <React.StrictMode>
-    <PrismicProvider client={client}>
-     <App />
-    </PrismicProvider>
+    <ThemeProvider theme={theme}>
+      <PrismicProvider client={client}>
+      <Reset/>
+      <Global/>
+      <App />
+      </PrismicProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
