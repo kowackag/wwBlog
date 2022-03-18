@@ -1,9 +1,11 @@
 import React from 'react';
 import { useSinglePrismicDocument } from '@prismicio/react';
+import ArcticaPicture from './../pinguins-1400x480.jpg'
+import StyledHome from '../styled/Home.styled';
 
 const Home = () => {
     const [homeDoc] = useSinglePrismicDocument('home');
-    
+   
     const getData = (doc) => {
         const title = doc.data.title[0].text;
         const info = doc.data.info[0].text;
@@ -15,11 +17,12 @@ const Home = () => {
     if (homeDoc) {
         const [title, info, url, alt] = getData(homeDoc);
         return(
-            <>
-                <h2>{title}</h2>
+            <StyledHome>
+                <img  alt="arctica" src={ArcticaPicture}/>
+                <h2 className="title">{title}</h2>
+                <img src={url} className="photo" alt={alt}/>
                 <p>{info}</p>
-                <img src={url} alt={alt}/>
-            </>
+            </StyledHome>
         )
     } 
     return null;
