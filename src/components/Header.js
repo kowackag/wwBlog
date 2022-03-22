@@ -1,10 +1,11 @@
 import React from 'react';
 import StyledHeader from '../styled/Header.styled';
+import StyledContainer from '../styled/Container.styled';
 import StyledLink from './../styled/Link.styled'
 
 const Header = () => {
     const navFields = [
-        { title: 'O mnie', path: '/home'},
+        { title: 'O mnie', path: '/'},
         { title: 'Wydarzenia', path: '/wydarzenia'},
         { title: 'Filmografia', path: '/filmografia'},
         { title: 'Zdjęcia', path: '/zdjecia'},
@@ -14,17 +15,17 @@ const Header = () => {
 
     return(
         <StyledHeader>
-            <div className="container">
+            <StyledContainer flex={true}>
                 <div>
-                    <h1 className="header__title">Wojciech Walkiewicz</h1>
-                    <p className="header__subtitle">Operator, scenarzysta, reżyser</p>
+                    <h1>Wojciech Walkiewicz</h1>
+                    <p>Operator, scenarzysta, reżyser</p>
                 </div>
                 <nav className="header__nav">
                     <ul className="nav__list">
-                        {navFields.map(item=><li className="nav__item" key={item.title}><StyledLink activeClassName ={activeClass} to={item.path}>{item.title}</StyledLink></li>)}
+                        {navFields.map(item=><li className="nav__item" key={item.title}><StyledLink activeClassName ={activeClass} exact to={item.path}>{item.title}</StyledLink></li>)}
                     </ul>
                 </nav>
-            </div>
+            </StyledContainer>
         </StyledHeader>
     )
 }

@@ -1,13 +1,20 @@
 import React from 'react';
+import { NavLink} from 'react-router-dom';
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
-import Article from '../components/Article'
+
 const Events = () => {
     const [document] = useAllPrismicDocumentsByType('wojtekw');
-    return(
-        !document 
-        ? <p>Loading...</p> 
-        : document.map(({data,id})=><li key={id}><Article  {...data}/></li>)
-    )
+
+    if (document) {
+        const navigation = document.map(({data,uid}) =><NavLink exact to={`/wydarzenia/${uid}`}><h3>{data.title[0].text}</h3></NavLink>);
+        return(
+            <>
+                <h2>Wydarzenia</h2>
+                {navigation}
+            </>
+        )
+    }
+    return null;
 }
 
 export default Events; 

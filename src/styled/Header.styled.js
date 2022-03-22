@@ -4,14 +4,6 @@ const StyledHeader = styled.header`
     padding: 1rem 2rem;
     background-color: rgb(var(--color-alfa));
     color: rgb(var(--color-font));
-   
-    & .container {
-        margin: auto;
-        max-width: 1400px;
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 
     & .header__nav {
         width:55%; 
