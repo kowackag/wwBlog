@@ -13,10 +13,10 @@ function App() {
         <Header/>
         <Switch>
           <Route exact path={'/'}><Home/></Route>
-          <Route exact path={'/wydarzenia'}><ul><Events/></ul></Route>
-          <Route path='/wydarzenia/:slugs'><Article/></Route>
-          <Route exact path={'/filmografia'} component={Home}></Route>
-          <Route exact path={'/kontakt'}><Contact/></Route>
+          <Route path={'/wydarzenia'}><ul><Events/></ul></Route>
+          <Route path='/:slugs'><Article/></Route>
+          {/* <Route exact path={'/filmografia'}></Route> */}
+          <Route path={'/kontakt'}><Contact/></Route>
         </Switch>
       </Router>
   );

@@ -7,16 +7,19 @@ const Article = () => {
     const {slugs} = useParams();
     if (document) {
         const [doc] = document.filter(item => item.uid === slugs);
-        const {content, photo, introduction, title, date} = doc.data;
-        return(
-            <>
-                <h2>{title[0].text}</h2>
-                <p>{date}</p>
-                {introduction.map(({text})=><p>{text}</p>)}
-                {content.map(({text})=><p>{text}</p>)}
-                <img alt={photo.alt} src={photo.url}/>
-            </>
-        )
+        if (doc) {
+            const {content, photo, introduction, title, date} = doc.data;
+            return(
+                <>
+                    <h2>{title[0].text}</h2>
+                    <p>{date}</p>
+                    {introduction.map(({text})=><p>{text}</p>)}
+                    {content.map(({text})=><p>{text}</p>)}
+                    <img alt={photo.alt} src={photo.url}/>
+                </>
+            )
+        }
+        return null;
     }
     return null;
 }

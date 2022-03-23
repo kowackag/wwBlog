@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
-    padding: 1rem 2rem;
     background-color: rgb(var(--color-alfa));
     color: rgb(var(--color-font));
 
