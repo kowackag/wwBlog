@@ -47,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         font-family: "Lato", Verdana, sans-serif;
         font-size: 1.6rem;
-        background: radial-gradient(rgb(var(--color-gamma)),transparent);
+        background: radial-gradient(rgb(var(--color-gamma)), transparent);
         color: rgb(var(--color-font));
         line-height:1.5;
     }

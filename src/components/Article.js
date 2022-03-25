@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams} from 'react-router-dom';
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 
+import StyledArticle from '../styled/Article.styled';
+
 const Article = () => {
     const [document] = useAllPrismicDocumentsByType('wojtekw');
     const {slugs} = useParams();
@@ -11,13 +13,15 @@ const Article = () => {
             const {content, photo, introduction, title, date} = doc.data;
             console.log(content)
             return(
-                <>
-                    <h2>{title[0].text}</h2>
-                    <p>{date}</p>
+                <StyledArticle>
+                    <header>
+                        <h2>{title[0].text}</h2>
+                        <p>{date}</p>
+                    </header>
                     {introduction.map(({text})=><p>{text}</p>)}
                     {content.map(({text})=><p>{text}</p>)}
                     <img alt={photo.alt} src={photo.url}/>
-                </>
+                </StyledArticle>
             )
         }
         return null;
