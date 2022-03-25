@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledContact = styled.article`
-    max-width: 1400px;
+    max-width: 1300px;
     margin: auto;
     padding: 3rem 2rem;
     color: rgb(var(--color-alfa));
@@ -9,6 +9,11 @@ const StyledContact = styled.article`
 
     & h2, h3 {
         margin-bottom: 2rem;
+    }
+
+    & h2 {
+        font-style: italic;
+        font-size: 4rem;
     }
 
     & li {

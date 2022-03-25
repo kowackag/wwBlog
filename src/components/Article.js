@@ -9,6 +9,7 @@ const Article = () => {
         const [doc] = document.filter(item => item.uid === slugs);
         if (doc) {
             const {content, photo, introduction, title, date} = doc.data;
+            console.log(content)
             return(
                 <>
                     <h2>{title[0].text}</h2>

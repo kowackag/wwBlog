@@ -4,7 +4,6 @@ import { useAllPrismicDocumentsByType } from '@prismicio/react';
 
 import StyledEvents from '../styled/Events.styled';
 import EventsForm from '../components/EventsForm';
-import StyledContainer from '../styled/Container.styled';
 import {convertStringDateToMilis} from './../helpers';
 
 const Events = () => {
@@ -25,16 +24,15 @@ const Events = () => {
     }
 
     if (document) {
-
         const filteredDoc = document.filter(({data}) => 
             data.title[0].text.toUpperCase().includes(phrase.toUpperCase())
             && (dateTo ? convertStringDateToMilis(data.date) <= convertStringDateToMilis(dateTo) : true)
             && (dateFrom ? convertStringDateToMilis(data.date) >= convertStringDateToMilis(dateFrom) : true));
-        
+        console.log(filteredDoc)
         const navigation = (
-            <ul>{filteredDoc.map(({data,uid, id})=>
+            <ul>{filteredDoc.map(({data, uid, id})=>
                 <li key={id}>
-                    <NavLink exact to={`/${uid}`}><h3>{data.title[0].text}</h3></NavLink>
+                    <NavLink to={`/wydarzenia/${uid}`}><h3>{data.title[0].text}</h3></NavLink>
                     <p>{data.date}</p>
                 </li>)}
             </ul>);

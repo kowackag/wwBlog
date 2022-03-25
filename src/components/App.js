@@ -1,23 +1,14 @@
 import React from 'react';
-import {HashRouter as Router, Switch, Route} from 'react-router-dom';
+import {HashRouter as Router} from 'react-router-dom';
 
-import Header from './Header'
-import Home from '../views/Home';
-import Events from '../views/Events';
-import Article from './Article';
-import Contact from '../views/Contact';
+import Header from './Header';
+import AnimatedSwitch from './AnimatedSwitch';
 
 function App() {
   return (
       <Router>
         <Header/>
-        <Switch>
-          <Route exact path={'/'}><Home/></Route>
-          <Route path={'/wydarzenia'}><ul><Events/></ul></Route>
-          <Route path='/:slugs'><Article/></Route>
-          {/* <Route exact path={'/filmografia'}></Route> */}
-          <Route path={'/kontakt'}><Contact/></Route>
-        </Switch>
+        <AnimatedSwitch/>
       </Router>
   );
 }

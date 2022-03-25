@@ -11,15 +11,13 @@ import Reset from './styled/Reset';
 import Global from './styled/Global'
 console.log(client)
 ReactDOM.render(
-  <React.StrictMode>
     <ThemeProvider theme={theme}>
       <PrismicProvider client={client}>
       <Reset/>
       <Global/>
       <App />
       </PrismicProvider>
-    </ThemeProvider>
-  </React.StrictMode>,
+    </ThemeProvider>,
   document.getElementById('root')
 );
 
