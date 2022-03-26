@@ -28,7 +28,7 @@ const Events = () => {
             data.title[0].text.toUpperCase().includes(phrase.toUpperCase())
             && (dateTo ? convertStringDateToMilis(data.date) <= convertStringDateToMilis(dateTo) : true)
             && (dateFrom ? convertStringDateToMilis(data.date) >= convertStringDateToMilis(dateFrom) : true));
-        console.log(filteredDoc)
+        
         const navigation = (
             <ul>{filteredDoc.map(({data, uid, id})=>
                 <li key={id}>
