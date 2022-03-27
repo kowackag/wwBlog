@@ -171,21 +171,21 @@
         "id": 25,
         "title": "PEWNEGO RAZU W LISTOPADZIE",
         "genre": "film fabularny",
-        "performance": ["Operator kamery (w zdjęciach dokumentalnych)"],
+        "performance": ["operator kamery (w zdjęciach dokumentalnych)"],
         "year": 2017
     },
     {
         "id": 26,
         "title": "WKRĘCENI 2",
         "genre": "film fabularny",
-        "performance": ["Operator kamery"],
+        "performance": ["operator kamery"],
         "year": 2015
     },
     {
         "id": 27,
         "title": "PIĄTY STADION",
         "genre": "film fabularny",
-        "performance": ["Operator kamery"],
+        "performance": ["operator kamery"],
         "year": 2012,
         "yearEnd":2014
     },
@@ -193,7 +193,7 @@
         "id": 28,
         "title": "DWIE STRONY MEDALU",
         "genre": "film fabularny",
-        "performance": ["Operator kamery"],
+        "performance": ["operator kamery"],
         "year": 2006,
         "yearEnd":2007
     },
@@ -201,7 +201,7 @@
         "id": 29,
         "title": "PLEBANIA",
         "genre": "film fabularny",
-        "performance": ["Operator kamery (od odcinka 159)"],
+        "performance": ["operator kamery (od odcinka 159)"],
         "year": 2000,
         "yearEnd":2011
     },
@@ -209,7 +209,7 @@
         "id": 30,
         "title": "KLAN",
         "genre": "film fabularny",
-        "performance": ["Operator kamery"],
+        "performance": ["operator kamery"],
         "year": 1997,
         "yearEnd":2022
     },
@@ -224,28 +224,28 @@
         "id": 32,
         "title": "KOCHAM. ENTER",
         "genre": "Serial paradokumentalny",
-        "performance": ["Współpraca operatorska"],
+        "performance": ["współpraca operatorska"],
         "year": 2013
     },
     {
         "id": 33,
         "title": "SYRENY",
         "genre": "film dokumentalny",
-        "performance": ["Współpraca operatorska"],
+        "performance": ["współpraca operatorska"],
         "year": 2005
     },
     {
         "id": 34,
         "title": "SKRAWEK NIEBA",
         "genre": "film dokumentalny",
-        "performance": ["Współpraca operatorska"],
+        "performance": ["współpraca operatorska"],
         "year": 2002
     },
     {
         "id": 35,
         "title": "TAŚMY GROZY",
         "genre": "serial dokumentalny",
-        "performance": ["Współpraca operatorska"],
+        "performance": ["współpraca operatorska"],
         "year": 2002
     },
     {

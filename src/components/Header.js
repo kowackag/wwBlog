@@ -8,7 +8,7 @@ const Header = () => {
         { title: 'O mnie', path: '/'},
         { title: 'Wydarzenia', path: '/wydarzenia'},
         { title: 'Filmografia', path: '/filmografia'},
-        { title: 'Zdjęcia', path: '/zdjecia'},
+        // { title: 'Zdjęcia', path: '/zdjecia'},
         { title: 'Kontakt', path: '/kontakt'},
     ]
     const activeClass = 'active';
