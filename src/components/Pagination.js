@@ -4,7 +4,7 @@ import PaginationRoute from './PaginationRoute';
 
 const Pagination = props => {
     const {children, path, limit=10} = props;
-    console.log(path)
+
     return (
         <Switch>
             <Route path={`${path}/:page`}>

@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link, useParams} from 'react-router-dom';
 
+import StyledPaginationRoute from './../styled/PaginationRoute.styled'
+
 const PaginationRoute = props => {
     const {children, path, limit = 1} = props;
 
@@ -21,9 +23,9 @@ const PaginationRoute = props => {
     return (
         <>
             {children.slice(begin, end)}
-            <nav>
+            <StyledPaginationRoute>
                 <ul>{links}</ul>
-            </nav> 
+            </StyledPaginationRoute> 
         </>
     );
 }

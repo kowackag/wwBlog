@@ -6,7 +6,7 @@ import db from './../db/db.json';
 import Film from './../components/Film';
 import StyledFilmography from './../styled/Filmography.styled';
 import Pagination from '../components/Pagination';
-
+import StyledNavFilms from '../styled/NavFilms.styled';
 import {v4 as uuid} from 'uuid';
 
 const Filmography = () => {
@@ -46,17 +46,15 @@ const Filmography = () => {
 
     const categories = createCategories();
    
-
     const navigation = categories && categories.map(({id, slug, title}) =>(
-        <li key={id}><Link to={`/filmografia/${slug}`}>{title}</Link></li>
-    )) 
+        <li key={id}><Link to={`/filmografia/${slug}`}>{title}</Link></li>)) 
 
     const routes = categories && categories.map(({id, slug, title})=> {
         const filmDB = copyDB.filter(item=>item.performance.includes(`${title}`));
         return (
             <Route path={`/filmografia/${slug}`}>
                 <ul>
-                    <Pagination path={`/filmografia/${slug}`} limit={5}>
+                    <Pagination path={`/filmografia/${slug}`} limit={8}>
                         {filmDB.map(item =><Film key={item.id} item={item}/>)}
                     </Pagination> 
                 </ul>
@@ -67,7 +65,7 @@ const Filmography = () => {
     return ( 
         <StyledFilmography> 
             <h2>Filmografia</h2>
-            <ul>{navigation}</ul>
+            <StyledNavFilms>{navigation}</StyledNavFilms>
             {routes}
         </StyledFilmography>
     ) 

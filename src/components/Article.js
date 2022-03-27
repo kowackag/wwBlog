@@ -18,7 +18,7 @@ const Article = () => {
                         <h2>{title[0].text}</h2>
                         <p>{date}</p>
                     </header>
-                    {introduction.map(({text})=><p>{text}</p>)}
+                    {introduction.map((item, ind)=><p key={ind}>{item.text}</p>)}
                     {content.map(({text})=><p>{text}</p>)}
                     <img alt={photo.alt} src={photo.url}/>
                 </StyledArticle>
