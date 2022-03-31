@@ -1,11 +1,12 @@
 import React from 'react';
 import  {TransitionGroup, CSSTransition} from 'react-transition-group';
-import {withRouter} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 
-import Routes from './Routes';
+import RoutesList from './Routes';
 import PageAnimation from '../styled/PageAnimation';
 
-const AnimatedSwitch = ({location}) => {
+const AnimatedSwitch = () => {
+    let location = useLocation();
     const {key, pathname} = location;
     const animationTime = 1000;
 
@@ -15,11 +16,11 @@ const AnimatedSwitch = ({location}) => {
             classNames="page-animation" timeout={animationTime} 
             key={key ? key : pathname}>
                 <PageAnimation time={animationTime}>
-                    <Routes location={location}/>
+                    <RoutesList location={location}/>
                 </PageAnimation>
             </CSSTransition>
         </TransitionGroup>
     )     
 }
 
-export default withRouter(AnimatedSwitch);
+export default AnimatedSwitch;

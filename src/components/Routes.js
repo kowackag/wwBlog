@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch,Redirect } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 import Home from '../views/Home';
 import Events from '../views/Events';
@@ -8,19 +8,19 @@ import Filmography from '../views/Filmography';
 import Contact from '../views/Contact';
 import NotFound from './NotFound';
 
-const Routes = () => {
+const RoutesList = () => {
     return (
-        <Switch>
-            <Route exact path='/'><Home/></Route>
-            <Route exact path='/wydarzenia/'><ul><Events/></ul></Route>
-            <Route path='/wydarzenia/:slugs'><Article/></Route>
-            <Route path='/filmografia'><Filmography/></Route>
+        <Routes>
+            <Route exact path='/' element={<Home/>}/>
+            <Route exact path='/wydarzenia/' element={<Events/>}/>
+            <Route path='/wydarzenia/:slugs' element={<Article/>}/>
+            <Route path='/filmografia' element={<Filmography/>}/>
             {/* <Route path='/zdjecia'><NotFound/></Route> */}
-            <Route path='/kontakt'><Contact/></Route>
-            <Route path='/404.html'><NotFound/></Route>
-            <Route><Redirect to="/404.html" /></Route>
-        </Switch>
+            <Route path='/kontakt' element={<Contact/>}/>
+            <Route path='/404.html' element={<NotFound/>}/>
+            {/* <Navigate to="/404.html" /> */}
+        </Routes>
     )
 }
 
-export default Routes;
+export default RoutesList;
