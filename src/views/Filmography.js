@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Route, Routes, Link} from 'react-router-dom';
 import {useAllPrismicDocumentsByType} from '@prismicio/react';
 
 import db from './../db/db.json';
@@ -39,6 +39,7 @@ const Filmography = () => {
                     title: data.title[0].text,
                     slug: slugs[0],
                 }
+               
                 return categories;
             })
         }
@@ -49,16 +50,20 @@ const Filmography = () => {
     const navigation = categories && categories.map(({id, slug, title}) =>(
         <li key={id}><Link to={`/filmografia/${slug}`}>{title}</Link></li>)) 
 
-    const routes = categories && categories.map(({id, slug, title})=> {
+    const routes = categories && categories.map(({id, slug, title}) => {
+       
         const filmDB = copyDB.filter(item=>item.performance.includes(`${title}`));
+        // console.log(filmDB)
         return (
-            <Route path={`/filmografia/${slug}`}>
-                <ul>
-                    <Pagination path={`/filmografia/${slug}`} limit={8}>
-                        {filmDB.map(item =><Film key={item.id} item={item}/>)}
-                    </Pagination> 
-                </ul>
-            </Route>
+            <Routes>
+                <Route 
+                    path={`/filmografia/${slug}`}
+                    element={
+                        <Pagination path={`/filmografia/${slug}`} limit={8}>
+                            {filmDB.map(item =><Film key={item.id} item={item}/>)}
+                        </Pagination>}
+                />
+            </Routes>
         )
     })
 

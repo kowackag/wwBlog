@@ -11,7 +11,6 @@ const Article = () => {
         const [doc] = document.filter(item => item.uid === slugs);
         if (doc) {
             const {content, photo, introduction, title, date} = doc.data;
-            console.log(content)
             return(
                 <StyledArticle>
                     <header>
@@ -19,7 +18,7 @@ const Article = () => {
                         <p>{date}</p>
                     </header>
                     {introduction.map((item, ind)=><p key={ind}>{item.text}</p>)}
-                    {content.map(({text})=><p>{text}</p>)}
+                    {content.map((item, ind)=><p key={ind}>{item.text}</p>)}
                     <img alt={photo.alt} src={photo.url}/>
                 </StyledArticle>
             )

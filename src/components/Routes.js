@@ -11,14 +11,14 @@ import NotFound from './NotFound';
 const RoutesList = () => {
     return (
         <Routes>
-            <Route exact path='/' element={<Home/>}/>
-            <Route exact path='/wydarzenia/' element={<Events/>}/>
+            <Route path='/*' element={<Home/>}/>
+            <Route path='/wydarzenia/*' element={<Events/>}/>
             <Route path='/wydarzenia/:slugs' element={<Article/>}/>
-            <Route path='/filmografia' element={<Filmography/>}/>
+            <Route path='/filmografia/*' element={<Filmography/>}/>
             {/* <Route path='/zdjecia'><NotFound/></Route> */}
             <Route path='/kontakt' element={<Contact/>}/>
             <Route path='/404.html' element={<NotFound/>}/>
-            {/* <Navigate to="/404.html" /> */}
+            <Route element={<Navigate to="/404.html" />}/>
         </Routes>
     )
 }

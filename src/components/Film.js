@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import StyledFilm from '../styled/Film.styled';
 
@@ -14,4 +15,11 @@ const Film = ({item}) => {
     )
 }
 
+Film.propTypes = {
+    id: PropTypes.string,
+    title: PropTypes.string,
+    genre: PropTypes.string,
+    performance: PropTypes.array,
+    year: PropTypes.string,
+}
 export default Film;

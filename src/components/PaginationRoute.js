@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link, useParams} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import StyledPaginationRoute from './../styled/PaginationRoute.styled'
 
 const PaginationRoute = props => {
     const {children, path, limit = 1} = props;
-
     const {page} = useParams();
     const begin = limit * (page-1);
     const end = page * limit;
@@ -28,6 +28,12 @@ const PaginationRoute = props => {
             </StyledPaginationRoute> 
         </>
     );
+}
+
+PaginationRoute.propTypes = {
+    children: PropTypes.node,
+    path: PropTypes.string,
+    limit: PropTypes.number
 }
 
 export default PaginationRoute;
