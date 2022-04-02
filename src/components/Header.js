@@ -22,7 +22,7 @@ const Header = () => {
                 </div>
                 <nav className="header__nav">
                     <ul className="nav__list">
-                        {navFields.map(item=><li className="nav__item" key={item.title}><StyledLink className={(item) => item.isActive ? activeClass : "" } to={item.path}>{item.title}</StyledLink></li>)}
+                        {navFields.map(item=><li className="nav__item" key={item.title}><StyledLink className={(item) => item.isActive ? activeClass : '' } to={item.path}>{item.title}</StyledLink></li>)}
                     </ul>
                 </nav>
             </StyledContainer>

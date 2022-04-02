@@ -15,6 +15,10 @@ const RoutesList = () => {
             <Route path='/wydarzenia/*' element={<Events/>}/>
             <Route path='/wydarzenia/:slugs' element={<Article/>}/>
             <Route path='/filmografia/*' element={<Filmography/>}/>
+                {/* <Route 
+                        path={`fotosy`}
+                        element= {<Home/>}/> */}
+            {/* </Route> */}
             {/* <Route path='/zdjecia'><NotFound/></Route> */}
             <Route path='/kontakt' element={<Contact/>}/>
             <Route path='/404.html' element={<NotFound/>}/>

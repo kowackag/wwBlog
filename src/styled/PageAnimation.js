@@ -11,7 +11,7 @@ const PageAnimation = styled.div`
         &-enter-active {
             opacity: 1;
         }
-
+  
         &-exit {
             display: none;
         }
