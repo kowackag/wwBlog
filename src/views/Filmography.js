@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Routes, Link} from 'react-router-dom';
+import {Route, Routes, NavLink} from 'react-router-dom';
 import {useAllPrismicDocumentsByType} from '@prismicio/react';
 import {v4 as uuid} from 'uuid';
 
@@ -44,8 +44,9 @@ const Filmography = () => {
     }
 
     const categories = createCategories();
+    const activeClass = 'active';
     const navigation = categories && categories.map(({id, slug, title}) =>(
-        <li key={id}><Link to={`${slug}`}>{title}</Link></li>)) 
+        <li key={id}><NavLink className={({isActive})=> isActive ? activeClass : ""} to={`${slug}`}>{title}</NavLink></li>)) 
 
     const routes = categories && categories.map(({id, slug, title}) => {
         const filmDB = copyDB.filter(item=>item.performance.includes(`${title}`));

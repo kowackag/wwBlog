@@ -8,8 +8,14 @@ const StyledPaginationRoute = styled.nav`
         justify-content: center;
         list-style: none;
         & a {
-            color: rgb(var(--color-alfa));
             padding: 1rem;
+            color: rgb(var(--color-alfa));
+            text-decoration: none;
+            
+            &.active {
+                font-weight: bold;
+                text-decoration: underline;
+            }
         }
     }
 `

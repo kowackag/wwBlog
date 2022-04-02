@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useParams} from 'react-router-dom';
+import {NavLink, useParams} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import StyledPaginationRoute from './../styled/PaginationRoute.styled'
@@ -12,11 +12,13 @@ const PaginationRoute = props => {
     const length = children.length;
     const pages = Math.ceil(length / limit);
 
+    const activeClass = 'active';
+
     const links = (new Array(pages).fill(0)).map(
         (item, index) => <li key={index}>
-            <Link to={`/filmografia/${path}/${index+1}`}>
+            <NavLink className={({ isActive }) => (isActive ? activeClass : "")} to={`/filmografia/${path}/${index+1}`}>
                 {index +1}
-            </Link>
+            </NavLink>
         </li>
     );
 

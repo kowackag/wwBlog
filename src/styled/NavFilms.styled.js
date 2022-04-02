@@ -6,21 +6,29 @@ const StyledNavFilms = styled.nav`
             justify-content: space-around;
             flex-wrap: wrap;
             margin: 3rem;
-            list-style: none;
+            list-style: none;   
     }
    
     & li {
         box-shadow: 2px 2px 4px rgb(var(--color-beta));
         margin-bottom: 1rem;
+        position: relative;
+        
         & a {
             display: inline-block;
             padding: 1rem  2rem;
             text-decoration: none;
             color: rgb(var(--color-alfa));
             font-weight: bold;
-            text-transform: uppercase
-        }
+            text-transform: uppercase;
+           
+            &.active {
+                background-color: rgba(var(--color-contrast),0.5);
+                font-weight: bold;
+            }
+        }  
     }
+   
 `
 
 export default StyledNavFilms;
