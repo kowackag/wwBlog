@@ -1,7 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import StyledHeader from '../styled/Header.styled';
 import StyledContainer from '../styled/Container.styled';
-import StyledLink from './../styled/Link.styled'
+import StyledNav from './../styled/Link.styled'
 
 const Header = () => {
     const navFields = [
@@ -20,11 +21,16 @@ const Header = () => {
                     <h1>Wojciech Walkiewicz</h1>
                     <p>Operator, scenarzysta, reżyser</p>
                 </div>
-                <nav className="header__nav">
-                    <ul className="nav__list">
-                        {navFields.map(item=><li className="nav__item" key={item.title}><StyledLink className={(item) => item.isActive ? activeClass : '' } to={item.path}>{item.title}</StyledLink></li>)}
+                <StyledNav>
+                    <ul>
+                        {navFields.map(item=>
+                            <li key={item.title}>
+                                <NavLink className={({ isActive }) => (isActive ? activeClass : "")} to={item.path}>
+                                    {item.title}
+                                </NavLink>
+                            </li>)}
                     </ul>
-                </nav>
+                </StyledNav>
             </StyledContainer>
         </StyledHeader>
     )
