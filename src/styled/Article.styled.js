@@ -3,12 +3,12 @@ import styled from 'styled-components';
 const StyledArticle = styled.article`
     max-width: 1300px;
     margin: auto;
-    padding: 3rem 2rem;
+    padding: 2rem;
     color: rgb(var(--color-alfa));
     font-size: 1.8rem;  
 
     & header {
-        margin-bottom: 2rem;
+        margin: 3.5rem 0;
         font-style: italic;
         & h2 {
             font-size: 3.5rem;
@@ -26,6 +26,11 @@ const StyledArticle = styled.article`
     & img {
         display: block;
         margin: auto;
+    }
+    & figcaption {
+        text-align: center;
+        font-style: italic;
+        font-size: 1.4rem
     }
 `
 export default StyledArticle;
