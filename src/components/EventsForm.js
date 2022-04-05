@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import StyledEventsForm from '../styled/EventsForm.styled';
 
 const EventsForm = ({data, onChange, onClick}) => {
@@ -24,4 +26,9 @@ const EventsForm = ({data, onChange, onClick}) => {
     )
 }
 
+EventsForm.propTypes = {
+    phrase: PropTypes.string,
+    dateFrom: PropTypes.number,
+    dateTo: PropTypes.string
+}
 export default EventsForm;

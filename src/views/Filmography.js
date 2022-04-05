@@ -44,9 +44,8 @@ const Filmography = () => {
     }
 
     const categories = createCategories();
-    const activeClass = 'active';
     const navigation = categories && categories.map(({id, slug, title}) =>(
-        <li key={id}><NavLink className={({isActive})=> isActive ? activeClass : ""} to={`${slug}`}>{title}</NavLink></li>)) 
+        <li key={id}><NavLink className={({isActive})=> isActive ? 'active' : ''} to={`${slug}`}>{title}</NavLink></li>)) 
 
     const routes = categories && categories.map(({id, slug, title}) => {
         const filmDB = copyDB.filter(item=>item.performance.includes(`${title}`));
@@ -55,7 +54,7 @@ const Filmography = () => {
                 key={id}
                 path={`${slug}/*`}
                 element={
-                    <Pagination path={`${slug}`} limit={8}>
+                    <Pagination path={`filmografia/${slug}`} limit={8}>
                         {filmDB.map((item, index) =><Film key={index} item={item}/>)}
                     </Pagination>
                 }

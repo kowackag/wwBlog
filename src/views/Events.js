@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
-import { NavLink} from 'react-router-dom';
+import { NavLink, Routes, Route, Navigate} from 'react-router-dom';
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 
-import StyledEvents from '../styled/Events.styled';
 import EventsForm from '../components/EventsForm';
 import {convertStringDateToMilis} from './../helpers';
+import PaginationRoute from '../components/PaginationRoute';
+
+import StyledEvents from '../styled/Events.styled';
+
 
 const Events = () => {
+
     const [document] = useAllPrismicDocumentsByType('wojtekw');
     
     const initData = {
@@ -35,14 +39,33 @@ const Events = () => {
                     <NavLink to={`/wydarzenia/${uid}`}><h3>{data.title[0].text}</h3></NavLink>
                     <p>{data.date}</p>
                 </li>);
-            
+
+        const routes = filteredDoc && filteredDoc.map(({id}) => {
+            return (
+                <Route
+                    key={id}
+                    path={`str/:page`}
+                    element={
+                        <PaginationRoute path={`wydarzenia/str`} limit={5}>
+                          {navigation}
+                        </PaginationRoute>
+                    }
+                />
+            )
+        })
+
         return (
             <StyledEvents data={data} onChange={changeValue} onClick={()=>setData(initData)}>
                 <h2>Wydarzenia, galerie, wystawy</h2>
                 <div>
-                    <ul>{navigation}</ul>
-                    <EventsForm data={document}/>
-                </div>
+                    <section>
+                        <Routes>
+                            {routes}
+                            <Route path={''} element={<Navigate replace to={`str/1`}/>}/>
+                        </Routes> 
+                    </section>
+                    <EventsForm data={document}/> 
+                </div>  
             </StyledEvents>
         )
     }

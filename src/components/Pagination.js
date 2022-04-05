@@ -10,8 +10,8 @@ const Pagination = props => {
         <Routes>
             <Route 
                 path={`:page`} 
-                element={<PaginationRoute path={path} limit={limit} children={children}/>}/>
-            <Route path={'/'} element={<Navigate replace to={`/filmografia/${path}/1`}/>}/>
+                element={<PaginationRoute path={`${path}`} limit={limit} children={children}/>}/>
+            <Route path={'/'} element={<Navigate replace to={`/${path}/1`}/>}/>
         </Routes>
     )
 }

@@ -16,10 +16,6 @@ const Film = ({item}) => {
 }
 
 Film.propTypes = {
-    id: PropTypes.string,
-    title: PropTypes.string,
-    genre: PropTypes.string,
-    performance: PropTypes.array,
-    year: PropTypes.string,
+    item: PropTypes.object,
 }
 export default Film;

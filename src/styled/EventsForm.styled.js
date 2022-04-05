@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const StyledEventsForm = styled.form`
-   padding: 2rem;
-   background-color: rgb(var(--color-beta));
-   color: rgb(var(--color-font));
-
+    padding: 2rem 1rem;
+    background-color: rgb(var(--color-beta));
+    color: rgb(var(--color-font));
+    align-self: flex-start;
     & div {
-        padding: 2rem;
+        padding: 1rem;
     }
 
     & label {

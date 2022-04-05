@@ -16,7 +16,7 @@ const PaginationRoute = props => {
 
     const links = (new Array(pages).fill(0)).map(
         (item, index) => <li key={index}>
-            <NavLink className={({ isActive }) => (isActive ? activeClass : "")} to={`/filmografia/${path}/${index+1}`}>
+            <NavLink className={({ isActive }) => (isActive ? activeClass : "")} to={`/${path}/${index+1}`}>
                 {index +1}
             </NavLink>
         </li>

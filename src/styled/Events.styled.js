@@ -17,8 +17,8 @@ const StyledEvents = styled.article`
         justify-content: space-between;
     }
 
-    & ul {
-        min-width: 60%;
+    & section {
+        width: 60%;
     }
 
     & li {
