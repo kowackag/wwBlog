@@ -3,7 +3,7 @@ import { NavLink, Routes, Route, Navigate} from 'react-router-dom';
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 
 import EventsForm from '../components/EventsForm';
-import {convertStringDateToMilis} from './../helpers';
+import {getFilteredArr} from './../helpers';
 import PaginationRoute from '../components/PaginationRoute';
 
 import StyledEvents from '../styled/Events.styled';
@@ -19,8 +19,7 @@ const Events = () => {
         dateTo:''
     }
     const [data, setData] = useState(initData);
-    const {phrase, dateFrom, dateTo} = data;
-
+    
     const changeValue = e => {
         e.preventDefault();
         const {name, value} = e.target;
@@ -28,10 +27,7 @@ const Events = () => {
     }
 
     if (document) {
-        const filteredDoc = document.filter(({data}) => 
-            data.title[0].text.toUpperCase().includes(phrase.toUpperCase())
-            && (dateTo ? convertStringDateToMilis(data.date) <= convertStringDateToMilis(dateTo) : true)
-            && (dateFrom ? convertStringDateToMilis(data.date) >= convertStringDateToMilis(dateFrom) : true));
+        const filteredDoc = getFilteredArr(document, data);
         
         const navigation = filteredDoc && 
             filteredDoc.map(({data, uid, id})=>

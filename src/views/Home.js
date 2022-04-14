@@ -9,11 +9,11 @@ const Home = () => {
     const [homeDoc] = useSinglePrismicDocument('home');
    
     const getData = (doc) => {
-        const title = doc.data.title[0].text;
-        const info = doc.data.info[0].text;
-        const url = doc.data.photo.url;
-        const alt = doc.data.photo.alt;
-        return [title, info, url,alt]
+        const {text: title} = doc.data.title[0];
+        const {text: info} = doc.data.info[0];
+        const {url, alt} = doc.data.photo;
+
+        return [title, info, url, alt]
     }
     
     if (homeDoc) {

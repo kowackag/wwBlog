@@ -12,21 +12,32 @@ import StyledNavFilms from '../styled/NavFilms.styled';
 
 const Filmography = () => {
     const [filmDoc] = useAllPrismicDocumentsByType('filmography');
+ 
     const getFilms = () => {
         if (filmDoc) {
-           return filmDoc.map(({data})=> {
+            return filmDoc.map(({data})=> {
+                const {
+                    title:[{text: title}],
+                    genre:[{text: genre}],
+                    year,
+                    performance: [{text: performance}]
+                } = data;
                 const filmList = {
                     id: uuid(),
-                    title: data.title[0].text,
-                    genre: data.genre[0].text,
-                    year: (new Date(data.year)).getFullYear(),
-                    performance: data.performance[0].text.split("")
+                    title: title,
+                    genre: genre,
+                    year: (new Date(year)).getFullYear(),
+                    performance: performance.split(",")
                 }
+                console.log(filmList)
                 return filmList;
             }) 
         }
     }
-    const copyDB = getFilms() ? [...db, ...getFilms()] : db;
+    const films = getFilms();
+
+    const copyDB = films ? [...db, ...films] : db;
+
     const [categoryDoc] = useAllPrismicDocumentsByType('category');
     
     const createCategories = () => {
@@ -48,7 +59,9 @@ const Filmography = () => {
         <li key={id}><NavLink className={({isActive})=> isActive ? 'active' : ''} to={`${slug}`}>{title}</NavLink></li>)) 
 
     const routes = categories && categories.map(({id, slug, title}) => {
+        
         const filmDB = copyDB.filter(item=>item.performance.includes(`${title}`));
+        // console.log(filmDB)
         return (
             <Route
                 key={id}

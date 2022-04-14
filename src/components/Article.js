@@ -14,16 +14,16 @@ const Article = () => {
         const [doc] = document.filter(item => item.uid === slugs);
         if (doc) {
             const {content, photo, photodesc, introduction, title, date} = doc.data;
+            const {text} = title[0];
             return(
                 <StyledArticle>
                     <StyledButton onClick={()=> navigate('/wydarzenia')}>Wróć</StyledButton>
-                    <header>
-                        <h2>{title[0].text}</h2>
+                    <header> 
+                        <h2>{text}</h2>
                         <p>{date}</p>
                     </header>
-                    
-                    {introduction.map((item, ind)=><p key={ind}>{item.text}</p>)}
-                    {content.map((item, ind)=><p key={ind}>{item.text}</p>)}
+                    {introduction.map((parag, ind)=><p key={ind}>{parag.text}</p>)}
+                    {content.map((parag, ind)=><p key={ind}>{parag.text}</p>)}
                     <figure>
                         <img alt={photo.alt} src={photo.url}/>
                         <figcaption>{photodesc[0] ? photodesc[0].text : ''}</figcaption>
