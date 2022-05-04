@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSinglePrismicDocument } from '@prismicio/react';
 
-import ArcticaPicture from './../pinguins-1400x480.jpg'
+import ArcticaPicture from '../pinguins-1400x480.jpg'
 
 import StyledHome from '../styled/Home.styled';
 

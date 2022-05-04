@@ -1,7 +1,7 @@
 {
-  "name": "task-react-routing",
+  "homepage": "https://kowackag.github.io/WWBlog/",
+  "name": "wojciech-walkiewicz-blog",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@prismicio/client": "^6.4.1",
     "@prismicio/react": "^2.1.2",
@@ -11,9 +11,11 @@
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-is": "^18.0.0",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-transition-group": "^4.4.2",
+    "style-loader": "^2.0.0",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
