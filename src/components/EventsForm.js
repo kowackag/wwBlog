@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import StyledContainer from '../styled/Container.styled';
 import StyledEventsForm from '../styled/EventsForm.styled';
 
 const EventsForm = ({data, onChange, onClick}) => {
@@ -10,15 +10,15 @@ const EventsForm = ({data, onChange, onClick}) => {
     return(
         <StyledEventsForm>
             <div>
-                <label htmlFor="phrase">Szukaj wydarzenia:</label>
-                <input id="phrase" name="phrase" value={phrase} onChange={onChange}/>
+                <label htmlFor="phrase">Szukaj wydarzenia:
+                <input id="phrase" name="phrase" value={phrase} onChange={onChange}/></label>
             </div>
-            <div>
-                <label htmlFor="dateFrom">Data od</label>
-                <input id="dateFrom" name="dateFrom" value={dateFrom} type="date" onChange={onChange}/>
-                <label htmlFor="dateTo">do</label>
-                <input id="dateTo" name="dateTo" value={dateTo} type="date" onChange={onChange}/>
-            </div>
+            <StyledContainer flex={true}>
+                <label htmlFor="dateFrom">Data od: 
+                <input id="dateFrom" name="dateFrom" value={dateFrom} type="date" onChange={onChange}/></label>
+                <label htmlFor="dateTo">do: 
+                <input id="dateTo" name="dateTo" value={dateTo} type="date" onChange={onChange}/></label>
+            </StyledContainer>
             <div> 
                 <button onClick={onClick}>Wyczyść</button>
             </div>

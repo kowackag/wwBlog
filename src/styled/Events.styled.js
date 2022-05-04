@@ -9,17 +9,18 @@ const StyledEvents = styled.article`
     & h2 {
         margin-bottom: 2rem;
         font-style: italic;
-        font-size: 4rem;
+        font-size: 3rem;
     }
-
-    & div {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    & section {
-        width: 60%;
-    }
+        &>div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        & section {
+            margin-top:1rem;
+            order: 1;
+            width: 100%;
+        }
 
     & li {
         margin-bottom: 1rem;
@@ -36,6 +37,20 @@ const StyledEvents = styled.article`
         & p {
             font-size:1.4rem;
             color: rgb(var(--color-beta));
+        }
+    }
+
+    @media (min-width:762px) {
+        & h2 {
+            font-size: 4rem;
+        }
+       
+        &>div {
+            flex-wrap: nowrap;
+        }
+        & section {
+            order: -1;
+            width: 55%;
         }
     }
 

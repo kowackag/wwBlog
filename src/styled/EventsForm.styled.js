@@ -2,19 +2,20 @@ import styled from 'styled-components';
 
 const StyledEventsForm = styled.form`
     padding: 2rem 1rem;
+    margin:2rem auto;
     background-color: rgb(var(--color-beta));
     color: rgb(var(--color-font));
     align-self: flex-start;
-    & div {
+    min-width:70%;
+    
+    & > div {
         padding: 1rem;
-    }
-
-    & label {
-        padding:0.5rem 1rem;
+        text-align: center;
     }
 
     & input {
-        padding:0.5rem;
+        margin: 1rem;
+        padding:1rem;
         border: none;
         outline: none;
     }
@@ -23,6 +24,10 @@ const StyledEventsForm = styled.form`
         margin: auto;
         padding: 1rem 3rem;
         font-weight: bold;
+    }
+
+    @media (min-width:762px) {
+        min-width:auto;
     }
 `
 export default StyledEventsForm;

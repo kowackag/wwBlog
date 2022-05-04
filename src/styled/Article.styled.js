@@ -5,13 +5,13 @@ const StyledArticle = styled.article`
     margin: auto;
     padding: 2rem;
     color: rgb(var(--color-alfa));
-    font-size: 1.8rem;  
+    font-size: 1.6rem;  
 
     & header {
         margin: 3.5rem 0;
         font-style: italic;
         & h2 {
-            font-size: 3.5rem;
+            font-size: 3rem;
         }
         & p {
             font-size:1.4rem;
@@ -26,6 +26,7 @@ const StyledArticle = styled.article`
     & img {
         display: block;
         margin: auto;
+        max-width:100%;
     }
     & figcaption {
         text-align: center;

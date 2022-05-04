@@ -61,7 +61,6 @@ const Filmography = () => {
     const routes = categories && categories.map(({id, slug, title}) => {
         
         const filmDB = copyDB.filter(item=>item.performance.includes(`${title}`));
-        // console.log(filmDB)
         return (
             <Route
                 key={id}

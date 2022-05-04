@@ -20,7 +20,7 @@ const Home = () => {
         const [title, info, url, alt] = getData(homeDoc);
         return(
             <StyledHome>
-                <img src={ArcticaPicture} alt="arctica"/>
+                <img className="arctica" src={ArcticaPicture} alt="arctica"/>
                 <h2 className="title">{title}</h2>
                 <img className="photo" src={url} alt={alt}/>
                 <p>{info}</p>

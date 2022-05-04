@@ -3,10 +3,10 @@ import styled from 'styled-components';
 const StyledNavFilms = styled.nav`
     & ul {
         display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 3rem;
-            list-style: none;   
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 1rem;
+        list-style: none;   
     }
    
     & li {
@@ -21,6 +21,7 @@ const StyledNavFilms = styled.nav`
             color: rgb(var(--color-alfa));
             font-weight: bold;
             text-transform: uppercase;
+            text-align:center;
            
             &.active {
                 background-color: rgba(var(--color-contrast),0.5);
@@ -28,6 +29,7 @@ const StyledNavFilms = styled.nav`
             }
         }  
     }
+
    
 `
 
