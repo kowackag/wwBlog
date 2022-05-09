@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Route, Routes, NavLink} from 'react-router-dom';
 import {useAllPrismicDocumentsByType} from '@prismicio/react';
 import {v4 as uuid} from 'uuid';
@@ -12,7 +12,17 @@ import StyledNavFilms from '../styled/NavFilms.styled';
 
 const Filmography = () => {
     const [filmDoc] = useAllPrismicDocumentsByType('filmography');
- 
+    useEffect(()=>{
+        const currentState = window.history;
+        if (!currentState.key || currentState.key !== 'film') {
+            const newState =  { key: 'film' }
+            window.history.replaceState(newState, null, '/filmografia/');
+            // window.history.replaceState(newState, null, window.location.href);
+        }
+    },[]);
+
+    console.log(window.history);
+
     const getFilms = () => {
         if (filmDoc) {
             return filmDoc.map(({data})=> {

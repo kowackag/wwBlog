@@ -10,6 +10,8 @@ const AnimatedSwitch = () => {
     const {key, pathname} = location;
     const animationTime = 1000;
 
+    console.log(key);
+    
     return (
         <TransitionGroup>
             <CSSTransition 
